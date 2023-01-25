@@ -4,29 +4,27 @@ import { Button } from '../../components/Button'
 import { TextField } from '../../components/TextField'
 import Logo from '../../../assets/logo.svg'
 import { useNavigation } from '@react-navigation/native'
+import { ButtonFull } from '../../components/ButtonFull'
 
-export const PasswordScreen = () => {
-    const navigation = useNavigation()
+export const SelectUserScreen = () => {
     return (
         <View style={styles.container}>
             <View style={stylesUp.container}>
                 <Logo />
             </View>
             <View style={stylesDown.container}>
-            <KeyboardAvoidingView  behavior='padding'>
-                    <View style={stylesDown.main}>
-                        <Text style={stylesDown.title}>Uhull, codigo confirmado!</Text>
-                        <Text style={stylesDown.subtitle}>Agora vamos criar uma senha para {`\n`}finalizar o seu cadastro.</Text>
-                        <TextField title='Senha' placeholder='Digite uma senha' />
-                        <TextField title='Confirme senha' placeholder='Confirme sua senha' />
-                    </View>
-            </KeyboardAvoidingView>
-                <View>
-                    <Button action={'Main'} title='Próximo' />
+                <View style={stylesDown.main}>
+                    <Text style={stylesDown.title}>Oi, bem vindo(a)</Text>
+                    <Text style={stylesDown.subtile}>Pronto(a) para deixar sua vida mais saudável?</Text>
+                    <Text style={stylesDown.subtitle}>O que você procura?</Text>
+                    <ButtonFull action='Main' title='Quero ser Cliente'/>
+
+                    <ButtonFull action='RegisterDataScreen' title='Quero ser Nutricionista'/>
                 </View>
+                
             </View>
         </View>
-        
+
     )
 }
 
@@ -85,7 +83,6 @@ const stylesDown = StyleSheet.create({
         fontWeight: '600',
         color: '#fff',
         marginTop: 22,
-        textAlign: "center",
         marginBottom: 18
     },
 })

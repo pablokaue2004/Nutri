@@ -1,11 +1,11 @@
 import React from 'react'
 import { Image, KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native'
-import { Button } from '../../components/Button'
-import { TextField } from '../../components/TextField'
-import Logo from '../../../assets/logo.svg'
+import { Button } from '../../../components/Button'
+import { TextField } from '../../../components/TextField'
+import Logo from '../../../../assets/logo.svg'
 import { useNavigation } from '@react-navigation/native'
 
-export const MainScreen = () => {
+export const RegisterDataScreen = () => {
     const navigation = useNavigation()
     return (
         <View style={styles.container}>
@@ -13,21 +13,20 @@ export const MainScreen = () => {
                 <Logo />
             </View>
             <View style={stylesDown.container}>
-            <KeyboardAvoidingView  behavior='padding'>
-                    <View style={stylesDown.main}>
-                        <Text style={stylesDown.title}>Oi, bem vindo(a)</Text>
-                        <Text style={stylesDown.subtile}>Pronto(a) para deixar sua vida mais saudável?</Text>
-                        <Text style={stylesDown.subtitle}>Cadastre-se</Text>
+                <View style={stylesDown.main}>
+                    <Text style={stylesDown.title}>Vamos criar um cadastro para você!</Text>
+                    <Text style={stylesDown.subtitle}>Preencha todos os dados a seguir</Text>
+                    <KeyboardAvoidingView behavior='padding'>
                         <TextField title='Nome' placeholder='Digite um nome' />
                         <TextField title='Email' placeholder='Digite um Email' />
-                    </View>
-            </KeyboardAvoidingView>
+                    </KeyboardAvoidingView>
+                </View>
                 <View>
-                    <Button action={'Register'} title='Próximo' />
+                    <Button action={'CodeRegisterScreen'} title='Próximo' />
                 </View>
             </View>
         </View>
-        
+
     )
 }
 
@@ -76,16 +75,10 @@ const stylesDown = StyleSheet.create({
         fontWeight: '800',
         color: '#fff'
     },
-    subtile: {
-        fontSize: 15,
-        fontWeight: '600',
-        color: '#fff'
-    },
     subtitle: {
         fontSize: 15,
         fontWeight: '600',
         color: '#fff',
-        marginTop: 22,
         marginBottom: 18
     },
 })

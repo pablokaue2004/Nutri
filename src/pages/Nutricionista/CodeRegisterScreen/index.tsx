@@ -1,29 +1,28 @@
 import React from 'react'
 import { Image, KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native'
-import { Button } from '../../components/Button'
-import { TextField } from '../../components/TextField'
-import Logo from '../../../assets/logo.svg'
+import { Button } from '../../../components/Button'
+import { TextField } from '../../../components/TextField'
+import Logo from '../../../../assets/logo.svg'
 
-export const RegisterScreen = () => {
+export const CodeRegisterScreen = () => {
     return (
         <View style={styles.container}>
             <View style={stylesUp.container}>
                 <Logo />
             </View>
             <View style={stylesDown.container}>
-            <KeyboardAvoidingView  behavior='padding'>
-                    <View style={stylesDown.main}>
-                        <Text style={stylesDown.title}>Foi enviado um codigo {`\n`} para seu dispositivo</Text>
-                        <Text style={stylesDown.subtitle}>Confirme o código</Text>
-                        <TextField title='Código' placeholder='Digite o código' />
-                    </View>
-            </KeyboardAvoidingView>
+                <View style={stylesDown.main}>
+                    <Text style={stylesDown.title}>Foi enviado um codigo {`\n`} para seu dispositivo</Text>
+                    <Text style={stylesDown.subtitle}>Confirme o código</Text>
+                    <TextField title='Código' placeholder='Digite o código' />
+                </View>
+
                 <View>
                     <Button action={'Password'} title='Próximo' />
                 </View>
             </View>
         </View>
-        
+
     )
 }
 
